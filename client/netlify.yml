@@ -1,4 +1,4 @@
 build:
-  base: "/"
-  command: "npm run build"
-  publish: "/"
+  base: client
+  command: npm run build
+  publish: client
