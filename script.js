@@ -50,7 +50,7 @@ async function sendMessage() {
 
     try {
         // Make a POST request to the server with user input
-        const response = await fetch('/api/openai', {
+        const response = await fetch('https://botchatserver.netlify.app/api/openai', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
