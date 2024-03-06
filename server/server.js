@@ -1,10 +1,17 @@
 const express = require('express');
+const path = require('path');
 const fetch = require('node-fetch');
 require('dotenv').config(); // Load environment variables
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+// Specify the directory containing static files (client directory inside ChatBot)
+const staticFilesDirectory = path.join(__dirname, 'ChatBot', 'client');
+
+// Configure Express to serve static files from the specified directory
+app.use(express.static(staticFilesDirectory));
 
 app.use(express.json());
 
