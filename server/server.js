@@ -8,6 +8,14 @@ const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 
 app.use(express.json());
 
+// CORS middleware
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://botchatclient.netlify.app');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
+
 app.post('/api/chat', async (req, res) => {
   try {
     const userInput = req.body.input;
