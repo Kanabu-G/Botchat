@@ -6,3 +6,6 @@ package-lock.json
 
 # Ignore .env file containing sensitive information
 .env
+
+# Local Netlify folder
+.netlify
