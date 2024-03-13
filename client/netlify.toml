@@ -1,3 +1,8 @@
 [build]
-  base = "client"
-  publish = "."
+  command = "npm run build"  # Build command for the client
+  publish = "client/build"   # Publish directory for the client
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://botchatserver.netlify.app/api/:splat"  # Proxy requests to the server
+  status = 200
