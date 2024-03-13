@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"  # Build command for the client
-  publish = "client/"         # Publish directory for the client
+  base = "client"  # Specify the directory where the build command should run
+  publish = "."    # Publish directory for the client build output
 
 [[redirects]]
   from = "/api/*"
